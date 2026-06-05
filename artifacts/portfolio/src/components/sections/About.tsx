@@ -2,6 +2,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { MapPin, Languages } from "lucide-react";
 
 function Counter({ from, to, duration = 2, suffix = "", prefix = "" }: { from: number; to: number; duration?: number; suffix?: string; prefix?: string }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
@@ -73,27 +74,69 @@ export default function About() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-2 gap-4">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-            >
-              <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-colors h-full">
-                <CardContent className="p-6 flex flex-col justify-center h-full">
-                  <div className="text-4xl md:text-5xl font-bold text-white mb-2 text-primary">
-                    <Counter from={0} to={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+              >
+                <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-colors h-full">
+                  <CardContent className="p-6 flex flex-col justify-center h-full">
+                    <div className="text-4xl md:text-5xl font-bold text-white mb-2 text-primary">
+                      <Counter from={0} to={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+                    </div>
+                    <div className="text-sm font-mono text-muted-foreground">
+                      {stat.label}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Location + Languages */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+            className="grid grid-cols-2 gap-4"
+          >
+            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-colors">
+              <CardContent className="p-5 flex items-start gap-3">
+                <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">Location</div>
+                  <div className="text-white font-semibold text-sm">India</div>
+                  <div className="text-muted-foreground text-xs mt-0.5">Nellore, Andhra Pradesh</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-colors">
+              <CardContent className="p-5 flex items-start gap-3">
+                <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 shrink-0 mt-0.5">
+                  <Languages className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1.5">Languages</div>
+                  <div className="flex flex-wrap gap-1">
+                    {["Telugu", "Tamil", "English", "Kannada"].map(lang => (
+                      <span key={lang} className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 text-muted-foreground">
+                        {lang}
+                      </span>
+                    ))}
                   </div>
-                  <div className="text-sm font-mono text-muted-foreground">
-                    {stat.label}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </div>
     </Section>
