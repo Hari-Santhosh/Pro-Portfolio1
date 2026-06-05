@@ -1,6 +1,7 @@
 [build]
-  command = "cd artifacts/mockup-sandbox && rm -rf node_modules package-lock.json && npm install && npm run build"
+  command = "cd artifacts/mockup-sandbox && rm -rf node_modules package-lock.json pnpm-lock.yaml && npm install && npm run build"
   publish = "artifacts/mockup-sandbox/dist"
 
 [build.environment]
   NODE_VERSION = "22"
+  NPM_VERSION = "10"
