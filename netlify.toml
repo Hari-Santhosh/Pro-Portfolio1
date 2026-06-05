@@ -1,0 +1,6 @@
+[build]
+  command = "cd artifacts/mockup-sandbox && npm run build"
+  publish = "artifacts/mockup-sandbox/dist"
+
+[build.environment]
+  NODE_VERSION = "18"
