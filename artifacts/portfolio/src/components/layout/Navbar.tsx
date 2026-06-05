@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -88,7 +88,9 @@ export default function Navbar() {
             asChild
             data-testid="button-resume-nav"
           >
-            <a href="#contact">Resume</a>
+            <a href="resume.pdf" download="Gali_Hari_Santhosh_Resume.pdf">
+              <Download className="mr-1.5 h-3 w-3" /> Resume
+            </a>
           </Button>
         </nav>
 
@@ -131,7 +133,9 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 asChild
               >
-                <a href="#contact">Resume</a>
+                <a href="resume.pdf" download="Gali_Hari_Santhosh_Resume.pdf">
+                  <Download className="mr-2 h-4 w-4" /> Resume
+                </a>
               </Button>
             </motion.div>
           )}
