@@ -2,7 +2,10 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { FolderGit2, Cpu, Activity, Database, Sparkles, Zap, Clock, MemoryStick, Layers, Radio, Train, FlaskConical, Monitor, Globe, ShieldCheck, BarChart3, TrendingUp, MapPin, ShoppingCart } from "lucide-react";
+import { FolderGit2, Cpu, Activity, Database, Sparkles, Zap, Clock, MemoryStick, Layers, Radio, Train, FlaskConical, Monitor, Globe, ShieldCheck, BarChart3, TrendingUp, MapPin, ShoppingCart, ExternalLink, Lock } from "lucide-react";
+import { SiGithub } from "react-icons/si";
+
+const GH = "https://github.com/Hari-Santhosh";
 
 function MetricPill({ label, value }: { label: string; value: string }) {
   return (
@@ -97,10 +100,16 @@ export default function Projects() {
               </div>
             </CardContent>
 
-            <CardFooter className="pt-0 flex-wrap gap-1.5">
-              {["SystemVerilog", "RTL", "Fixed-point NN", "UART", "Python host", "FPGA/ASIC"].map(t => (
-                <TechChip key={t} label={t} />
-              ))}
+            <CardFooter className="pt-0 flex-col items-start gap-3">
+              <div className="flex flex-wrap gap-1.5">
+                {["SystemVerilog", "RTL", "Fixed-point NN", "UART", "Python host", "FPGA/ASIC"].map(t => (
+                  <TechChip key={t} label={t} />
+                ))}
+              </div>
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Lock className="w-3 h-3" />
+                <span className="font-mono">Private repository — institutional project</span>
+              </div>
             </CardFooter>
           </Card>
         </motion.div>
@@ -168,10 +177,16 @@ export default function Projects() {
               </div>
             </CardContent>
 
-            <CardFooter className="pt-0 flex-wrap gap-1.5">
-              {["Verilog", "RTL", "FSM", "Testbench", "FPGA", "ASIC", "VLSI"].map(t => (
-                <TechChip key={t} label={t} />
-              ))}
+            <CardFooter className="pt-0 flex-col items-start gap-3">
+              <div className="flex flex-wrap gap-1.5">
+                {["Verilog", "RTL", "FSM", "Testbench", "FPGA", "ASIC", "VLSI"].map(t => (
+                  <TechChip key={t} label={t} />
+                ))}
+              </div>
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Lock className="w-3 h-3" />
+                <span className="font-mono">Active thesis — not yet published</span>
+              </div>
             </CardFooter>
           </Card>
         </motion.div>
@@ -221,10 +236,20 @@ export default function Projects() {
                 <span><span className="text-white font-medium">Account management:</span> customer onboarding, profile views, and record maintenance</span>
               </div>
             </CardContent>
-            <CardFooter className="pt-0 flex-wrap gap-1.5">
-              {["Python", "Django", "Tkinter", "PostgreSQL", "SQL"].map(t => (
-                <TechChip key={t} label={t} />
-              ))}
+            <CardFooter className="pt-0 flex-col items-start gap-3">
+              <div className="flex flex-wrap gap-1.5">
+                {["Python", "Django", "Tkinter", "PostgreSQL", "SQL"].map(t => (
+                  <TechChip key={t} label={t} />
+                ))}
+              </div>
+              <a
+                href={GH}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-white transition-colors font-mono"
+              >
+                <SiGithub size={13} /> View on GitHub <ExternalLink size={10} />
+              </a>
             </CardFooter>
           </Card>
         </motion.div>
@@ -279,10 +304,16 @@ export default function Projects() {
                 <span><span className="text-white font-medium">Dashboards:</span> dynamic views for AOV, order volume, and period-over-period movement</span>
               </div>
             </CardContent>
-            <CardFooter className="pt-0 flex-wrap gap-1.5">
-              {["Tableau", "Retail Analytics", "KPI Dashboards", "Data Storytelling"].map(t => (
-                <TechChip key={t} label={t} />
-              ))}
+            <CardFooter className="pt-0 flex-col items-start gap-3">
+              <div className="flex flex-wrap gap-1.5">
+                {["Tableau", "Retail Analytics", "KPI Dashboards", "Data Storytelling"].map(t => (
+                  <TechChip key={t} label={t} />
+                ))}
+              </div>
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Lock className="w-3 h-3" />
+                <span className="font-mono">Tableau Public / offline workbook</span>
+              </div>
             </CardFooter>
           </Card>
         </motion.div>
@@ -324,10 +355,20 @@ export default function Projects() {
                 <span>Available on <span className="text-white font-medium">GitHub</span> — open-source and reproducible</span>
               </div>
             </CardContent>
-            <CardFooter className="pt-0 flex-wrap gap-1.5">
-              {["Python", "Scikit-learn", "Pandas", "ML", "GitHub"].map(t => (
-                <TechChip key={t} label={t} />
-              ))}
+            <CardFooter className="pt-0 flex-col items-start gap-3">
+              <div className="flex flex-wrap gap-1.5">
+                {["Python", "Scikit-learn", "Pandas", "ML"].map(t => (
+                  <TechChip key={t} label={t} />
+                ))}
+              </div>
+              <a
+                href={`${GH}/solar-power-prediction`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-white transition-colors font-mono"
+              >
+                <SiGithub size={13} /> View on GitHub <ExternalLink size={10} />
+              </a>
             </CardFooter>
           </Card>
         </motion.div>
