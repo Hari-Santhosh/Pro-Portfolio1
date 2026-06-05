@@ -73,13 +73,11 @@ export default function Contact() {
           <Button
             size="lg"
             className="h-12 px-7 bg-primary text-black font-semibold hover:bg-primary/90 group"
-            asChild
+            onClick={() => window.open("mailto:harisanthosh2000@gmail.com", "_blank")}
           >
-            <a href="mailto:harisanthosh2000@gmail.com">
-              <Send className="mr-2 h-4 w-4" />
-              Send a Message
-              <ArrowUpRight className="ml-2 h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
-            </a>
+            <Send className="mr-2 h-4 w-4" />
+            Send a Message
+            <ArrowUpRight className="ml-2 h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
           </Button>
 
           {/* Social links */}
