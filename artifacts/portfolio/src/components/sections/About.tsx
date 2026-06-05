@@ -57,16 +57,19 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-white"
+          className="space-y-4"
         >
-          <p>
-            I am an enthusiastic <strong>Data Analyst</strong> with strengths in statistical modeling, machine learning, dashboards, and predictive analytics. I leverage tools like <strong>Python, SQL, Tableau, and Power BI</strong> to extract meaningful narratives from complex data.
+          <p className="text-muted-foreground leading-relaxed">
+            Enthusiastic <span className="text-white font-medium">Data Analyst</span> with a strong foundation in data analysis, statistical modeling, and machine learning. Proficient in <span className="text-white font-medium">Python, SQL, Tableau, and Power BI</span>, with proven experience designing dashboards and building predictive models. Holder of Data Science certifications from <span className="text-white font-medium">Besant Technologies</span> and <span className="text-white font-medium">Reliance Foundation</span>, with expertise in data preprocessing, visualization, and deriving actionable insights from complex datasets.
           </p>
-          <p>
-            Currently pursuing my <strong>M.Tech in ECE (VLSI)</strong> at KL University, I am fascinated by the intersection of hardware performance and software intelligence. My upcoming thesis focuses on the Design of a Railway Passenger System using Verilog, and I have recently completed a production-grade RTL Neural Network accelerator project.
+          <p className="text-muted-foreground leading-relaxed">
+            Motivated to apply analytical and technical skills to solve business challenges and drive data-informed decision-making in dynamic, results-oriented organizations.
           </p>
-          <p>
-            Certified via <strong>Besant Technologies</strong> and <strong>Reliance Foundation</strong>, I bring a rigorous engineering mindset to data problems and an analytical approach to hardware design.
+          <p className="text-muted-foreground leading-relaxed">
+            Pursuing an <span className="text-white font-medium">M.Tech in ECE (VLSI)</span> at KL University (2025–2027). Upcoming thesis: design of a railway passenger system using Verilog — developing digital logic for passenger-flow control, reservation/ticketing state machines, display interfaces, and system-level integration with RTL simulation and verification.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Already completed a major M.Tech project as <span className="text-white font-medium">team lead</span> on a custom <span className="text-primary font-medium">RTL neural network accelerator</span> (SystemVerilog, fixed-point arithmetic, UART, Python host). Toolkit spans Verilog, SystemVerilog, digital/CMOS design, static timing analysis, and UVM — connecting data analytics with dependable hardware engineering.
           </p>
         </motion.div>
         
