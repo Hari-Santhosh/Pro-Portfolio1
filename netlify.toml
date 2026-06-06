@@ -1,5 +1,5 @@
 [build]
-  command = "cd artifacts/mockup-sandbox && npm install && npm run build"
+  command = "cd artifacts/mockup-sandbox && npm ci --include=dev && npm run build"
   publish = "artifacts/mockup-sandbox/dist"
 
 [build.environment]
