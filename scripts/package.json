@@ -1,14 +1,17 @@
 {
-  "name": "@workspace/scripts",
-  "version": "0.0.0",
-  "private": true,
+  "name": "portfolio",
+  "version": "1.0.0",
   "type": "module",
+  "private": true,
   "scripts": {
-    "hello": "tsx ./src/hello.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/node": "catalog:",
-    "tsx": "catalog:"
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
